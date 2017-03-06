@@ -3,4 +3,28 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+
+// COLORS
+$c-blue: #2b3e50;
+$c-white: #fefefe;
+$f-primary: 'Special Elite', cursive;
+$f-secondary: 'Maven Pro', sans-serif;
+
+// IMPORTS
 @import 'box-sizing';
+@import 'resets';
+@import 'layout';
+
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Special+Elite');
+
+// HEADER
+.section--header {
+  background: $c-blue;
+  color: $c-white;
+}
+
+.logo {
+  margin: 0;
+  font-family: $f-primary;
+}
