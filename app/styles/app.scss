@@ -11,20 +11,48 @@ $c-white: #fefefe;
 $f-primary: 'Special Elite', cursive;
 $f-secondary: 'Maven Pro', sans-serif;
 
+// MEASUREMENTS
+$m-gutter: 1rem;
+
+// BORDERS
+$b-img: 0.75rem;
+
 // IMPORTS
 @import 'box-sizing';
 @import 'resets';
 @import 'layout';
+@import 'header';
 
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro|Special+Elite');
 
-// HEADER
-.section--header {
-  background: $c-blue;
-  color: $c-white;
+// SIDEBAR
+.sidebar {
+  flex-basis: calc(30% - 1rem);
+  margin: 0 $m-gutter 0 0;
+
+  &__img {
+    width: 100%;
+    border-radius: $b-img;
+  }
+
 }
 
-.logo {
-  margin: 0;
-  font-family: $f-primary;
+
+
+
+
+
+// MAIN
+.section--content {
+
+}
+
+.container--content {
+  display: flex;
+  // flex-wrap: wrap;
+}
+
+.main {
+  flex-basis: calc(70% - 1rem);
+  margin: 0 0 0 $m-gutter;
 }
