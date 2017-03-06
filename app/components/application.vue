@@ -30,7 +30,7 @@
         <!-- MAIN -->
         <div class="main">
 
-          <!-- Characters -->
+          <!-- MAIN__Characters -->
           <div class="main__item">
             <h2 class="characters-title">Characters</h2>
             <ul class="characters-list">
@@ -53,8 +53,7 @@
             </ul>
           </div>
 
-          <!-- Comics -->
-
+          <!-- Main__Comics -->
           <div class="main__item">
             <h2 class="comics-title">Comics</h2>
             <ul class="comics-list">
@@ -92,12 +91,21 @@
       </div>
     </div>
 
-
-
-
-
-
+  <div class="section section--modal">
+    <div class="container">
+      <div class="modal">
+        <div class="modal__close">X</div>
+        <p class="modal__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique amet expedita aspernatur, minima in nobis doloremque numquam perspiciatis tempore cupiditate! Porro, aut numquam hic consectetur provident quod rem nostrum. Tenetur.
+        </p>
+      </div>
     </div>
+  </div>
+
+
+
+
+
   </div>
 </template>
 
