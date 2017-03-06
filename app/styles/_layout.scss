@@ -8,3 +8,18 @@
   max-width: 65rem;
   margin: 0 auto;
 }
+
+// CONTENT
+
+.section--content {
+  padding: 2rem;
+}
+
+.container--content {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex-grow: 1;
+  }
+}

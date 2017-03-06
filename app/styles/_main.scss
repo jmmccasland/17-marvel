@@ -1,0 +1,48 @@
+// MAIN
+.main {
+  flex-basis: calc(70% - 1rem);
+}
+
+/* Characters, Comics */
+.characters-title, .comics-title{
+  font-family: $f-primary;
+  font-size: 2rem;
+  border-bottom: $b-bottom;
+}
+
+.characters-list, .comics-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+
+  &__item {
+    flex-basis: calc(100% / 4 - 2rem);
+    min-width: 8rem;
+    max-width: 11rem;
+    flex-grow: 1;
+    margin: 1rem;
+
+    &__image {
+    border-radius: $b-img;
+    min-width: 100%;
+    height: auto;
+    }
+  }
+}
+
+// Characters
+@media (min-width: 651px) {
+  .characters-title {
+    margin-top: 0;
+  }
+}
+
+// Comics
+.comics-list__item__read {
+  width: 100%;
+  border: 0;
+  border-radius: $b-img;
+  padding: 0.5rem;
+  color: $c-white;
+  background: $c-blue;
+}

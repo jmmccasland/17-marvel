@@ -15,7 +15,7 @@ $f-secondary: 'Maven Pro', sans-serif;
 $m-gutter: 2rem;
 
 // BORDERS
-$b-img: 0.75rem;
+$b-img: 0.25rem;
 $b-bottom: 1px solid #000;
 
 // IMPORTS
@@ -23,65 +23,7 @@ $b-bottom: 1px solid #000;
 @import 'resets';
 @import 'layout';
 @import 'header';
+@import 'sidebar';
+@import 'main';
 
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro|Special+Elite');
-
-
-// CONTENT
-.container--content {
-  display: flex;
-  flex-wrap: wrap;
-
-  > * {
-    flex-grow: 1;
-  }
-}
-
-// SIDEBAR
-.sidebar {
-  flex-basis: calc(30% - 1rem);
-  margin: 0 $m-gutter 0 0;
-
-  &__img {
-    width: 100%;
-    border-radius: $b-img;
-  }
-
-  &__creators-title {
-    font-family: $f-primary;
-    border-bottom: $b-bottom;
-    margin-bottom: 0;
-  }
-
-}
-
-
-// MAIN
-.main {
-  flex-basis: calc(70% - 1rem);
-}
-
-/* Characters, Comics */
-.characters-title, .comics-title{
-  font-family: $f-primary;
-  font-size: 2rem;
-  border-bottom: $b-bottom;
-}
-
-.characters-list, .comics-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: -0.5rem;
-
-  &__item {
-    flex-basis: calc(100% / 4 - 2rem);
-    // flex-grow: 1;
-    margin: 1rem;
-
-    &__image {
-    border-radius: $b-img;
-    width: 100%;
-    }
-  }
-}
