@@ -15,8 +15,8 @@
         <div class="sidebar">
           <img src="http://placecage.com/200/200" alt="" class="sidebar__img">
           <h2 class="sidebar__title">Series Title</h2>
-          <p class="sidebar__date">Series Dates</p>
-          <h3 class="sidebar__creators-title">Creators</h3>
+          <p class="sidebar__date">1992 - 2001</p>
+          <h2 class="sidebar__creators-title">Creators</h2>
           <ul class="sidebar__creators">
             <li class="sidebar__creators-item">Creator Name</li>
             <li class="sidebar__creators-item">Creator Name</li>
@@ -59,25 +59,25 @@
             <h2 class="comics-title">Comics</h2>
             <ul class="comics-list">
               <li class="comics-list__item">
-                <img class="comics__list__item__image" src="http://placecera.com/100/100" alt="">
+                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
                 <p class="comics-list__item__issue">Issue #</p>
                 <p class="comics-list__item__name">Comic Name</p>
                 <button class="comics-list__item__read">Read More</button>
               </li>
               <li class="comics-list__item">
-                <img class="comics__list__item__image" src="http://placecera.com/100/100" alt="">
+                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
                 <p class="comics-list__item__issue">Issue #</p>
                 <p class="comics-list__item__name">Comic Name</p>
                 <button class="comics-list__item__read">Read More</button>
               </li>
               <li class="comics-list__item">
-                <img class="comics__list__item__image" src="http://placecera.com/100/100" alt="">
+                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
                 <p class="comics-list__item__issue">Issue #</p>
                 <p class="comics-list__item__name">Comic Name</p>
                 <button class="comics-list__item__read">Read More</button>
               </li>
               <li class="comics-list__item">
-                <img class="comics__list__item__image" src="http://placecera.com/100/100" alt="">
+                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
                 <p class="comics-list__item__issue">Issue #</p>
                 <p class="comics-list__item__name">Comic Name</p>
                 <button class="comics-list__item__read">Read More</button>
