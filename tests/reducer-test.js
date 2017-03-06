@@ -10,6 +10,6 @@ module('reducer', () => {
     const action = { type: 'SERIES_DATA@FIND_COMPLETE', data: { name: 'Spidermans' } };
     const newState = { seriesData: { name: 'Spidermans' }, comics: [], characters: [], modal: null };
 
-    assert.deepEqual((oldState, action), newState);
+    assert.deepEqual(reducer(oldState, action), newState);
   });
 });
