@@ -2,8 +2,8 @@
 .sidebar {
   flex-basis: calc(30% - 1rem);
   min-width: 10rem;
-  max-width: 20rem;
-  margin: 0 $m-gutter 0 0;
+  // max-width: 20rem;
+  margin-right: $m-gutter;
 
   &__img {
     width: 100%;
@@ -15,4 +15,11 @@
     border-bottom: $b-bottom;
     margin-bottom: 0;
   }
+}
+
+
+
+// MEDIA QUERIES
+@media (max-width: 650px) {
+
 }

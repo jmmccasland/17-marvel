@@ -1,10 +1,15 @@
 // MAIN
 .main {
   flex-basis: calc(70% - 1rem);
+
+  > * + * {
+    margin-top: 2rem;
+  }
 }
 
 /* Characters, Comics */
-.characters-title, .comics-title{
+.characters-title, .comics-title {
+  margin: 0 0 $m-gutter;
   font-family: $f-primary;
   font-size: 2rem;
   border-bottom: $b-bottom;
@@ -18,7 +23,7 @@
   &__item {
     flex-basis: calc(100% / 4 - 2rem);
     min-width: 8rem;
-    max-width: 11rem;
+    max-width: 13rem;
     flex-grow: 2;
     margin: 1rem;
 
@@ -31,10 +36,8 @@
 }
 
 // Characters
-@media (min-width: 651px) {
-  .characters-title {
-    margin-top: 0;
-  }
+.characters-list__item__name {
+  margin-bottom: 0;
 }
 
 // Comics
@@ -45,4 +48,22 @@
   padding: 0.5rem;
   color: $c-white;
   background: $c-blue;
+}
+
+
+@media (max-width: 550px) {
+
+  // Flexes the
+  .container--content {
+    flex-direction: column;
+  }
+
+  // Removes gutter margin on sidebar so that it fills the now single column container
+  .sidebar {
+    margin-right: 0;
+  }
+
+  .characters-title, .comics-title {
+    margin-top: $m-gutter;
+  }
 }
