@@ -13,7 +13,7 @@
 
         <!-- SIDEBAR -->
         <div class="sidebar">
-          <img :src="`${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}`" alt="" class="sidebar__img">
+          <img v-bind:src="`${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}`" alt="" class="sidebar__img">
           <h2 class="sidebar__title">{{ seriesInfo.title }}</h2>
           <p class="sidebar__date">{{seriesInfo.startYear}} - {{seriesInfo.endYear}}</p>
           <h2 class="sidebar__creators-title">Creators</h2>
@@ -30,54 +30,15 @@
           <div class="main__item">
             <h2 class="characters-title">Characters</h2>
             <ul class="characters-list">
-              <li class="characters-list__item">
-                <img class="characters-list__item__image" src="http://placecage.com/100/100" alt="">
-                <p class="characters-list__item__name">Character Name</p>
-              </li>
-              <li class="characters-list__item">
-                <img class="characters-list__item__image" src="http://placecage.com/100/100" alt="">
-                <p class="characters-list__item__name">Character Name</p>
-              </li>
-              <li class="characters-list__item">
-                <img class="characters-list__item__image" src="http://placecage.com/100/100" alt="">
-                <p class="characters-list__item__name">Character Name</p>
-              </li>
-              <li class="characters-list__item">
-                <img class="characters-list__item__image" src="http://placecage.com/100/100" alt="">
-                <p class="characters-list__item__name">Character Name</p>
-              </li>
+              <characteritem v-for="item in characterData" v-bind:character="item"></characteritem>
             </ul>
           </div>
 
-          <!-- Main__Comics -->
+          <!-- MAIN__Comics -->
           <div class="main__item">
             <h2 class="comics-title">Comics</h2>
             <ul class="comics-list">
-              <li class="comics-list__item">
-                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
-                <p class="comics-list__item__issue">Issue #</p>
-                <p class="comics-list__item__name">Comic Name</p>
-                <button class="comics-list__item__read">Read More</button>
-              </li>
-              <li class="comics-list__item">
-                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
-                <p class="comics-list__item__issue">Issue #</p>
-                <p class="comics-list__item__name">Comic Name</p>
-                <button class="comics-list__item__read">Read More</button>
-              </li>
-              <li class="comics-list__item">
-                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
-                <p class="comics-list__item__issue">Issue #</p>
-                <p class="comics-list__item__name">Comic Name</p>
-                <button class="comics-list__item__read">Read More</button>
-              </li>
-              <li class="comics-list__item">
-                <img class="comics-list__item__image" src="http://placecera.com/100/100" alt="">
-                <p class="comics-list__item__issue">Issue #</p>
-                <p class="comics-list__item__name">Comic Name</p>
-                <button class="comics-list__item__read">Read More</button>
-              </li>
-
+              <comicitem v-for="item in comicData" v-bind:comic="item"> </comicitem>
             </ul>
           </div>
 
@@ -104,8 +65,15 @@
 <script>
 import store from '../store';
 import { seriesInfoSearch } from '../actions';
+import characteritem from './character-item.vue';
+import comicitem from './comic-item.vue';
 
 export default {
+  components: {
+    characteritem,
+    comicitem,
+  },
+
   data() {
     return {
       seriesInfo: this.$select('seriesInfo'),
@@ -114,8 +82,8 @@ export default {
     };
   },
 
-  created() {
-    store.dispatch(seriesInfoSearch('spider'));
+  mounted() {
+    store.dispatch(seriesInfoSearch('Hulk'));
   },
 
   methods: {
