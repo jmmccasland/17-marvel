@@ -33,9 +33,32 @@ export function modalClear(data) {
   };
 }
 
+
+export function charactersFindForId(id) {
+  return (dispatch) => {
+    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/characters`)
+    .then(res => res.json())
+    .then((data) => {
+      const characters = data.data.results;
+      dispatch(charactersFindAllComplete(characters));
+    });
+  };
+}
+
+export function issuesFindForId(id) {
+  return (dispatch) => {
+    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/comics`)
+    .then(res => res.json())
+    .then((data) => {
+      const issues = data.data.results;
+      dispatch(comicsFindAllComplete(issues));
+    });
+  };
+}
+
 export function seriesInfoSearch(name) {
   return (dispatch) => {
-    fetch('http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=SPIDERMAN&apikey=APIKEY')
+    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(res => res.json())
     .then((data) => {
       const series = data.data.results[0];

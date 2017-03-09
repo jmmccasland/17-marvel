@@ -102,17 +102,24 @@
     </div>
   </div>
 
-
-
-
-
   </div>
 </template>
 
 <script>
+import store from '../store';
+import { seriesInfoSearch } from '../actions';
+
 export default {
   data() {
-    return {};
+    return {
+      seriesInfo: this.$select('seriesInfo'),
+      characterData: this.$select('characterData'),
+      comicData: this.$select('comicData'),
+    };
+  },
+
+  created() {
+    store.dispatch(seriesInfoSearch('spider'));
   },
 
   methods: {
