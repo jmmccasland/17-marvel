@@ -13,17 +13,13 @@
 
         <!-- SIDEBAR -->
         <div class="sidebar">
-          <img src="http://placecage.com/200/200" alt="" class="sidebar__img">
-          <h2 class="sidebar__title">Series Title</h2>
-          <p class="sidebar__date">1992 - 2001</p>
+          <img :src="`${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}`" alt="" class="sidebar__img">
+          <h2 class="sidebar__title">{{ seriesInfo.title }}</h2>
+          <p class="sidebar__date">{{seriesInfo.startYear}} - {{seriesInfo.endYear}}</p>
           <h2 class="sidebar__creators-title">Creators</h2>
           <ul class="sidebar__creators">
-            <li class="sidebar__creators-item">Creator Name</li>
-            <li class="sidebar__creators-item">Creator Name</li>
-            <li class="sidebar__creators-item">Creator Name</li>
-            <li class="sidebar__creators-item">Creator Name</li>
-            <li class="sidebar__creators-item">Creator Name</li>
-            <li class="sidebar__creators-item">Creator Name</li>
+            <li v-for="item in seriesInfo.creators.items" class="sidebar__creators-item">{{ item.name }}</li>
+
           </ul>
         </div>
 
