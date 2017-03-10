@@ -38,7 +38,7 @@
           <div class="main__item">
             <h2 class="comics-title">Comics</h2>
             <ul class="comics-list">
-              <comicitem v-for="item in comicData" v-bind:comic="item"> </comicitem>
+              <comicitem v-for="item in comicData" v-bind:comic="item" v-on:readmore="showModal"> </comicitem>
             </ul>
           </div>
 
@@ -48,10 +48,10 @@
       </div>
     </div>
 
-  <div class="section section--modal">
+  <div v-if="modal" class="section section--modal">
     <div class="container">
       <div class="modal">
-        <div class="modal__close">X</div>
+        <button class="modal__close" v-on:click="closeModal">X</button>
         <p class="modal__text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique amet expedita aspernatur, minima in nobis doloremque numquam perspiciatis tempore cupiditate! Porro, aut numquam hic consectetur provident quod rem nostrum. Tenetur.
         </p>
@@ -64,7 +64,7 @@
 
 <script>
 import store from '../store';
-import { seriesInfoSearch } from '../actions';
+import { seriesInfoSearch, modalSet, modalClear } from '../actions';
 import characteritem from './character-item.vue';
 import comicitem from './comic-item.vue';
 
@@ -79,15 +79,22 @@ export default {
       seriesInfo: this.$select('seriesInfo'),
       characterData: this.$select('characterData'),
       comicData: this.$select('comicData'),
+      modal: this.$select('modal'),
     };
   },
 
   mounted() {
-    store.dispatch(seriesInfoSearch('Hulk'));
+    store.dispatch(seriesInfoSearch('Luke'));
   },
 
   methods: {
+    showModal(data) {
+      store.dispatch(modalSet(data));
+    },
 
+    closeModal() {
+      store.dispatch(modalClear());
+    }
   },
 };
 </script>
