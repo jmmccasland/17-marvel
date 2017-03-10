@@ -49,14 +49,12 @@
     </div>
 
   <div v-if="modal" class="section section--modal">
-    <div class="container">
       <div class="modal">
         <button class="modal__close" v-on:click="closeModal">X</button>
         <p class="modal__text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique amet expedita aspernatur, minima in nobis doloremque numquam perspiciatis tempore cupiditate! Porro, aut numquam hic consectetur provident quod rem nostrum. Tenetur.
+          {{comicData.description}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, laboriosam, pariatur. Ea saepe quod animi amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quasi perferendis, similique tenetur est veritatis consequuntur eaque saepe nostrum laborum incidunt ipsam optio velit ad repudiandae! Deleniti porro voluptas sit.Voluptas ab sequi eaque adipisci rerum. Amet blanditiis porro, perferendis minus veniam quam eligendi.
         </p>
       </div>
-    </div>
   </div>
 
   </div>
@@ -84,7 +82,7 @@ export default {
   },
 
   mounted() {
-    store.dispatch(seriesInfoSearch('Luke'));
+    store.dispatch(seriesInfoSearch('Hulk'));
   },
 
   methods: {
