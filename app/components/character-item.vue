@@ -1,7 +1,9 @@
 <template lang="html">
 
     <li class="characters-list__item">
-      <img class="characters-list__item__image" v-bind:src="`${character.thumbnail.path}.${character.thumbnail.extension}`" alt="">
+      <div class="image-wrapper">
+        <img class="characters-list__item__image" v-bind:src="`${character.thumbnail.path}.${character.thumbnail.extension}`" alt="">
+      </div>
       <p class="characters-list__item__name">{{character.name}}</p>
     </li>
 

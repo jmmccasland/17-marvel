@@ -30,7 +30,7 @@
           <div class="main__item">
             <h2 class="characters-title">Characters</h2>
             <ul class="characters-list">
-              <characteritem v-for="item in characterData" v-bind:character="item"></characteritem>
+              <characteritem v-for="character in characterData" v-bind:character="character"></characteritem>
             </ul>
           </div>
 
@@ -41,18 +41,15 @@
               <comicitem v-for="item in comicData" v-bind:comic="item" v-on:readmore="showModal"> </comicitem>
             </ul>
           </div>
-
         </div>
-
-
       </div>
     </div>
 
   <div v-if="modal" class="section section--modal">
       <div class="modal">
         <button class="modal__close" v-on:click="closeModal">X</button>
-        <p class="modal__text">
-          {{comicData.description}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, laboriosam, pariatur. Ea saepe quod animi amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quasi perferendis, similique tenetur est veritatis consequuntur eaque saepe nostrum laborum incidunt ipsam optio velit ad repudiandae! Deleniti porro voluptas sit.Voluptas ab sequi eaque adipisci rerum. Amet blanditiis porro, perferendis minus veniam quam eligendi.
+        <p class="modal__text" v-for="item in comicData" v-bind:comic="description">
+          {{item.name}}
         </p>
       </div>
   </div>
@@ -82,7 +79,7 @@ export default {
   },
 
   mounted() {
-    store.dispatch(seriesInfoSearch('Hulk'));
+    store.dispatch(seriesInfoSearch('Spider-Man'));
   },
 
   methods: {
