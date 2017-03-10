@@ -48,8 +48,8 @@
   <div v-if="modal" class="section section--modal">
       <div class="modal">
         <button class="modal__close" v-on:click="closeModal">X</button>
-        <p class="modal__text" v-for="item in comicData" v-bind:comic="description">
-          {{item.name}}
+        <p class="modal__text"  >
+        {{modal.description}}
         </p>
       </div>
   </div>
