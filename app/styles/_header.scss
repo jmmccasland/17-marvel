@@ -4,7 +4,26 @@
   color: $c-white;
 }
 
+.container--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   margin: 0;
   font-family: $f-primary;
+}
+
+
+.search {
+  &__input {
+    height: 2rem;
+  }
+
+  &__submit {
+    border: 0;
+    height: 2rem;
+    margin: 0;
+  }
 }

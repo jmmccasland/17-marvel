@@ -2,8 +2,12 @@
   <div class="app">
     <!-- HEADER -->
     <div class="section section--header">
-      <div class="container">
+      <div class="container container--header">
         <h1 class="logo">Marvel</h1>
+        <form class="search" v-on:submit.prevent="searchByName(searchValue)">
+          <input type="text" placeholder="Search for a comic" class="search__input" v-model="searchValue">
+          <button class="search__submit">Submit</button>
+        </form>
       </div>
     </div>
 
@@ -30,7 +34,7 @@
           <div class="main__item">
             <h2 class="characters-title">Characters</h2>
             <ul class="characters-list">
-              <characteritem v-for="character in characterData" v-bind:character="character"></characteritem>
+              <characteritem v-for="character in characterData" v-bind:key="character.id" v-bind:character="character"></characteritem>
             </ul>
           </div>
 
@@ -38,7 +42,7 @@
           <div class="main__item">
             <h2 class="comics-title">Comics</h2>
             <ul class="comics-list">
-              <comicitem v-for="item in comicData" v-bind:comic="item" v-on:readmore="showModal"> </comicitem>
+              <comicitem v-for="item in comicData" v-bind:key="item.id" v-bind:comic="item" v-on:readmore="showModal"> </comicitem>
             </ul>
           </div>
         </div>
@@ -75,6 +79,7 @@ export default {
       characterData: this.$select('characterData'),
       comicData: this.$select('comicData'),
       modal: this.$select('modal'),
+      searchValue: '',
     };
   },
 
@@ -83,6 +88,11 @@ export default {
   },
 
   methods: {
+
+    searchByName(searchValue) {
+      store.dispatch(seriesInfoSearch(searchValue));
+    },
+
     showModal(data) {
       store.dispatch(modalSet(data));
     },
