@@ -17,7 +17,9 @@
 
         <!-- SIDEBAR -->
         <div class="sidebar">
-          <img v-bind:src="`${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}`" alt="" class="sidebar__img">
+          <div class="image-wrapper">
+            <img v-bind:src="`${seriesInfo.thumbnail.path}.${seriesInfo.thumbnail.extension}`" alt="" class="sidebar__img">
+          </div>
           <h2 class="sidebar__title">{{ seriesInfo.title }}</h2>
           <p class="sidebar__date">{{seriesInfo.startYear}} - {{seriesInfo.endYear}}</p>
           <h2 class="sidebar__creators-title">Creators</h2>

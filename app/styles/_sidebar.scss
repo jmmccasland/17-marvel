@@ -6,23 +6,26 @@
   margin-right: $m-gutter;
 
   &__img {
-    width: 100%;
+    position:  absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     border-radius: $b-img;
   }
 
   &__creators-title {
-    font-family: $f-primary;
-    border-bottom: $b-bottom;
     margin-bottom: 0;
+    border-bottom: $b-bottom;
+    font-family: $f-primary;
   }
+}
+
+.image-wrapper {
+  // width: 500px;
+  // height: 500px;
 }
 
 .sidebar__creators-item {
   text-transform: capitalize;;
-}
-
-
-// MEDIA QUERIES
-@media (max-width: 650px) {
-
 }

@@ -7,33 +7,35 @@
   }
 }
 
-/* Characters, Comics */
-.characters-title, .comics-title {
+// Characters, Comics
+.characters-title,
+.comics-title {
   margin: 0 0 $m-gutter;
+  border-bottom: $b-bottom;
   font-family: $f-primary;
   font-size: 2rem;
-  border-bottom: $b-bottom;
 }
 
-.characters-list, .comics-list {
+.characters-list,
+.comics-list {
   display: flex;
   flex-wrap: wrap;
   margin: -1rem;
 
   &__item {
     flex-basis: calc(100% / 4 - 2rem);
+    flex-grow: 2;
     min-width: 8rem;
     max-width: 13rem;
-    flex-grow: 2;
     margin: 1rem;
 
     &__image {
-      border-radius: $b-img;
       position:  absolute;
       top: 0;
-      left: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: $b-img;
     }
   }
 }
@@ -42,13 +44,15 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
 }
 
-.image-wrapper:before{
-	content: "";
-	display: block;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
-}
+
 
 // Characters
 .characters-list__item__name {
@@ -58,11 +62,11 @@
 // Comics
 .comics-list__item__read {
   width: 100%;
+  padding: 0.5rem;
   border: 0;
   border-radius: $b-img;
-  padding: 0.5rem;
-  color: $c-white;
   background: $c-blue;
+  color: $c-white;
 }
 
 
@@ -78,7 +82,8 @@
     margin-right: 0;
   }
 
-  .characters-title, .comics-title {
+  .characters-title,
+  .comics-title {
     margin-top: $m-gutter;
   }
 }

@@ -6,8 +6,8 @@
 
 .container--header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -22,8 +22,8 @@
   }
 
   &__submit {
-    border: 0;
     height: 2rem;
     margin: 0;
+    border: 0;
   }
 }
