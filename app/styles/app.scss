@@ -3,4 +3,59 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
+
+
+// COLORS
+$c-blue: #2b3e50;
+$c-white: #fefefe;
+$f-primary: 'Special Elite', cursive;
+$f-secondary: 'Maven Pro', sans-serif;
+
+// MEASUREMENTS
+$m-gutter: 2rem;
+
+// BORDERS
+$b-img: 0.25rem;
+$b-bottom: 1px solid #000;
+
+// IMPORTS
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Special+Elite');
 @import 'box-sizing';
+@import 'resets';
+@import 'layout';
+@import 'header';
+@import 'sidebar';
+@import 'main';
+
+// MODAL
+.section--modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 65rem;
+  padding: 2.5rem;
+  transform: translate(-50%, -50%);
+  background: $c-white;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem; // gave it padding instead of 1rem top/right so that the clickable area is larger
+    border: 0;
+    background: $c-white;
+    font-size: 1.15rem;
+    cursor: pointer;
+  }
+}
