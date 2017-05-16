@@ -23,10 +23,12 @@
   margin: -1rem;
 
   &__item {
-    flex-basis: calc(100% / 4 - 2rem);
-    flex-grow: 2;
-    min-width: 8rem;
-    max-width: 13rem;
+    flex: 2 0 10rem;
+    // flex-basis: calc(100% / 4 - 2rem);
+    // flex-grow: 2;
+    // min-width: 8rem;
+    // max-width: 13rem;
+
     margin: 1rem;
 
     &__image {
